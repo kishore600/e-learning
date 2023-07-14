@@ -1,0 +1,160 @@
+import fb from '../img/fb.png'
+import insta from '../img/insta.png'
+import tt from '../img/tt.png'
+import linkedin from '../img/linkedin.png'
+import ytube from '../img/ytube.png'
+import phn from '../img/phone.png'
+import location from '../img/location.png'
+import mail from '../img/mail.png'
+ <footer>
+		<div class="footer-container">
+			<div class="left-col">
+				<img src="images/icon/logo - Copy.png" style="width: 200px;">
+				<div class="logo"></div>
+				<div class="social-media">
+					<a href="#"><img src={fb}/></a>
+					<a href="#"><img src={insta}/></a>
+					<a href="#"><img src={tt}/></a>
+					<a href="#"><img src={linkedin}/></a>
+					<a href="#"><img src={ytube}></a>
+				</div><br><br>
+				<p class="rights-text">Copyright © 2021 Created By Roshan Kumar, Abhishek Dulat All Rights Reserved.</p>
+				<br><p><img src={}> Lovely Professional University<br>Phagwara, Punjab-144401</p><br>
+				<p><img src="images/icon/phone.png"> +91-1234-567-890<br><img src="images/icon/mail.png">&nbsp; learnedonline9419@gmail.com</p>
+			</div>
+			<div class="right-col">
+				<h1 style="color: #fff">Our Newsletter</h1>
+				<div class="border"></div><br>
+				<p>Enter Your Email to get our News and updates.</p>
+				<form class="newsletter-form">
+					<input class="txtb" type="email" placeholder="Enter Your Email">
+					<input class="btn" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</footer>
+    </div>
+
+//FOOTER COPYRIGHT
+
+import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+
+const footer = () => {
+  return (
+    <footer className='font'>
+        <Container>
+            <Row>
+                <Col className='text-center py-3'> 
+                   Copyright &copy; PGI
+                </Col>
+            </Row>
+        </Container>
+    </footer>
+  )
+}
+
+//FOOTER INCOMPLETE code
+export default footer
+        <div className='sb__footer section__padding'>
+         <div className='sb__footer-links'>
+          <div className='sb__footer-links-div'>
+            <h4>For Business</h4>
+            <a href='/employer'>
+                <p>Employer</p>
+            </a>
+            <a href='/healthplan'>
+                <p>Healthplan</p>
+            </a>
+            <a href='/Individual'>
+                <p>Individual</p>
+            </a>
+          <div/>
+          <div className='sb__footer-links-div'>
+            <h4> Resources</h4>
+            <a href='/resource'>
+                <p>Resource center</p>
+            </a>
+            <a href='/resource'>
+                <p>Testimmonial</p>
+            </a>
+            <a href='/resource'>
+                <p>STS</p>
+            </a>
+          </div>
+         </div>
+        </div>  
+
+#FOOTER CODE
+import React from 'react'
+import { Col, Row } from 'react-bootstrap';
+import fb from '../img/fb.png'
+import Logo from '../img/pgilogo2.png';
+import insta from '../img/insta.png'
+import tt from '../img/tt.png'
+import linkedin from '../img/linkedin.png'
+import ytube from '../img/ytube.png'
+import phn from '../img/phone.png'
+import location from '../img/location.png'
+import mail from '../img/mail.png'
+import { Facebook, Instagram, LinkedIn, LocalPhone, LocationOn, Mail, Phone, Twitter, YouTube } from '@mui/icons-material';
+
+const footer = () => {
+  return (
+    <div  className='font'>
+    <div class="shadow p-3 bg-dark">
+      <div class='class'>
+        <div>
+          <img src={Logo} width={"100"} style={{marginRight:'30px'}}></img>
+        </div>
+      <div class="social-media">
+					<a href='#' class='media' style={{textDecoration:"none", color:"white", paddingRight:'5px' }}><Facebook/></a>
+          <a href='#' class='media' style={{textDecoration:"none", color:"white", paddingRight:'5px' }}> <Instagram/> </a>
+          <a href='#' class='media' style={{textDecoration:"none", color:"white", paddingRight:'5px' }}><LinkedIn/> </a>
+          <a href='#' class='media' style={{textDecoration:"none", color:"white", paddingRight:'5px' }}> <YouTube/> </a>
+          <a href='#' class='media' style={{textDecoration:"none", color:"white", paddingRight:'5px' }}> <Twitter/> </a>
+				</div>
+      </div>
+      <div class='address'>
+          <a href='#' style={{textDecoration:"none", color:"white"}}><p><LocationOn/> Plant Green Inertia<br/> Thiruvenkatapuram,Choolaimedu,<br/>Nungambakkam, Chennai, Tamil Nadu - 600094</p></a>
+          <div class='contact' style={{color:'white'}}> 
+            <p>Contact Us<br/><LocalPhone/> +91 8220699083<br/><Mail/> training.pgi@gmail.com<br/>plantgreeninertia@gmail.com</p>
+           </div>
+        </div>
+        <hr style={{color:'white'}} class="line"/>
+      <div style={{paddingTop:"20px", color:"white"}}>
+          <p>Copyright &copy; 2023 All Rights Reserved</p>
+        </div>
+    </div>
+    </div>
+  )
+}
+
+export default footer;
+
+#Footer CSS
+.class{
+  color: white;
+  margin-right: 85%;
+  margin-top: 50px;
+  display: grid;
+}
+.social-media{
+  padding-top: 40px;
+  text-align: left;
+  padding-left: 25px;
+}
+.address{
+  padding-right: 57%;
+  padding-top:20px;
+  padding-left: 25px;
+  text-align: left;
+  display: inline-flex;
+}
+.media{
+  font-size: 30px;
+}
+.contact{
+  padding-left: 150%;
+  text-align: left;
+}
