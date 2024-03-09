@@ -1,227 +1,94 @@
-import React, { useEffect } from 'react'
-import { Button, Card, CardGroup, Carousel, Figure, Row } from 'react-bootstrap'
-import Img1 from '../img/banner1.png'
-import Img2 from '../img/banner21.png'
-import Img3 from '../img/banner3.png'
-import Img4 from '../img/tc1.jpeg'
-import Img5 from '../img/tc2.jpeg'
-import Img6 from '../img/tc3.jpeg'
-import Img7 from '../img/tc4.jpeg'
-import DM from '../img/DigiMark.png'
-import CC from '../img/ContCreat.png'
-import PS from '../img/PubSpeak.png'
-import SE from '../img/SpokEng.png'
-import Ec from '../img/ecom.png'
-import Business from '../img/business.png'
-import PT from '../img/PlaceTrain.png'
-import Testimonials from '../components/testimonial'
-import { getCourse } from '../features/course/CourseSlice'
-import { useSelector,useDispatch } from 'react-redux'
-import { useState } from 'react'
-import CourseScreen from './CourseScreen'
-import Loading from './Loading'
-import { Grid } from '@mui/material'
-import { getUserDetails } from '../features/user/UserSlice'
-import { getCategory } from '../features/category/CategorySlice'
+import React from 'react'
+import Homelogo from '../assets/homeillus.png'
+import Logo from '../assets/logo.png'
+import Card from './Card'
 
 const Home = () => {
-  const dispatch = useDispatch()
-  const {courses,error,loading} = useSelector((store)=>store.course)
-  const {user} = useSelector((store)=>store.user)
-
- useEffect(()=>{
-  dispatch(getCourse())
-  dispatch(getCategory())
- },[])
   return (
-    <div>
-      {/* BANNERS SECTION */}
-    <Carousel fade>
-      <Carousel.Item>
-        <a href='#'>
-        <img
-          className="d-block w-100"
-          src={Img3}
-          alt="First slide"
-        /></a>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={Img2}
-          alt="Second slide"
-        />
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src= {Img1}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-    </Carousel>
-    <div className='div-1'>
-    <div  style={{display:'flex',paddingLeft:"20px",paddingTop:'20px'}}> <br/><h2 className='new-font' style={{fontWeight:'bold'}}>Top courses we offer</h2>
-        </div>
-        <p class="font" style={{display:'flex',justifyContent:"flex-start",paddingLeft:"22px", paddingBottom:'22px'}}>Choose what you need the most from the wide rangeof courses that we offer</p>
-        <Grid item xs direction="row" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-        {
-          loading ? <Loading /> :(
-            <>
-            {
-              Array.isArray(courses) ? courses.map((course)=>{
-                return <CourseScreen course={course} key={course.id} {...course}  />
-              }):[]
-            }
-            </>
-            )
-          }
-          </Grid>
-          </div>
-          {/* {
-            courses.map((course)=>{
-              return <CourseScreen course = {course} key={course.id} {...course}  />
-            })
-          } */}
-          {/* TOP COURSES SECTION */}
-    <>
-    {/* {
-      courses.map((courses)=>{
-        <CourseScreen course={courses} />
-      })s
-    } */}
-    </>
-        {/* CATEGORIES SECTION*/}
-        <div  class="shadow p-3 mb-5 bg-white rounded" ><p><h4 class='font' style={{paddingTop:'20px'}}>Categories</h4></p>
-        <p><h4 class='font'>Upgrade your skills for better future</h4></p>
-<div class='font'>
-    <Figure>
-    <div style={{padding:'20px'}}>
-      <a href='#' style={{textDecoration:'none'}} class='card'>
-    <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={Business}
-      />
-      <Figure.Caption>
-      <b>Entrepreneurship</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-
-    <Figure>
-    <div style={{padding:'20px'}}>
-    <a href='#' style={{textDecoration:'none'}} class='card'>
-      <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={CC}
-      />
-      <Figure.Caption>
-        <b>Content Creation</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-
-    <Figure>
-    <div style={{padding:'20px'}}>
-      <a href='#' style={{textDecoration:'none'}} class='card'>
-      <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={PS}
-      />
-      <Figure.Caption>
-        <b>Public Speaking</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-
-    <Figure>
-    <div style={{padding:'20px'}}>
-    <a href='#' style={{textDecoration:'none'}} class='card'>
-      <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={SE}
-      />
-      <Figure.Caption>
-        <b>Spoken English</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-
-    <Figure>
-    <div style={{padding:'20px'}}>
-    <a href='#' style={{textDecoration:'none'}} class='card'>
-    <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={Ec}
-      />
-      <Figure.Caption>
-        <b>E-Commerce</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-     
-     <Figure>
-          <div style={{padding:'20px'}}>
-          <a href='#' style={{textDecoration:'none'}} class='card'>
-      <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={DM}
-      />
-      <Figure.Caption>
-        <b> Digital Marketing </b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
-
-    <Figure>
-    <div style={{padding:'20px'}}>
-    <a href='#' style={{textDecoration:'none'}} class='card'>
-    <Figure.Image
-        width={252}
-        height={265}
-        alt="252x265"
-        src={PT}
-      />
-      <Figure.Caption>
-        <b>Placement Training</b>
-      </Figure.Caption>
-      </a>
-      </div>
-    </Figure>
+<div className='bg-bg'>
+    <div className="flex items-center justify-center pt-40 mt-10 md:pt-30">
+    <div className="max-w-screen-xl ml-10 "> 
+        <h1 className="md:text-4xl text-2xl font-medium leading-tight mb-8">
+            <span>Accelerate Your Journey to Top<br/>Companies with</span>
+            <span className='text-orange'> Transformers!</span>
+        </h1>
+        <p className="md:text-lg text-gray-500 mb-6"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br/>
+            tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button className='bg-orange text-white py-4 px-6 
+            rounded-tr-3xl rounded-bl-3xl border-b-2 border-orange hover:bg-orangeshade duration-500 underline'>
+            Explore Courses
+        </button>
     </div>
+    <div className='ml-10  pl-9'> 
+        <img src={Homelogo} className="w-100 h-auto hidden md:block  pl-9" alt="Illustration"/> 
+    </div>
+    </div>
+    {/* Divider */}
+    <div class="flex items-center md:mt-40 mt-20 border-gr"> 
+        <hr class="flex-grow border-t border-gray"/> 
     </div> 
-    <hr style={{color:'black'}} class="style-two"/>
-    {/* TESTIMONIALS SECTION */}
-    <div className='div-2' ><div>
-      <h2 className='font'>Testimonials</h2> 
-      <Testimonials/>
-      <br/>
-      <br/>
-    </div>
-  </div>
-  </div>
 
-    
+       {/* About Section */}
+    <div class="flex items-center justify-center">
+      <h1 className="md:text-3xl text-2xl font-medium leading-tight mt-20">
+        <span className='text-orange font-bold'> About the company</span>
+      </h1>
+    </div>
+
+    <div className='flex mt-20 items-center justify-center '>
+        <div > 
+            <img src={Logo} className="w-full h-auto hidden md:block" alt="Logo"/> 
+        </div>
+    <div className="max-w-screen-xl ml-10 ">
+    <div className='md:pl-20 md:ml-10'>
+        <p className="md:text-xl font-medium text-gr leading-relaxed" style={{ lineHeight: '1.8' }}>
+            Welcome to Neural Transformers.ai! We are a leading product-based company<br/> 
+            specializing in cutting-edge technologies such as artificial intelligence 
+            and<br/> natural language processing. Our innovative solutions include chatbots,
+            OCR<br/> (Optical Character Recognition), and document summarizers. In addition, 
+            we<br/> offer comprehensive training programs in data science, data analysis,
+            cloud, and<br/>  .NET, along with placement and internship opportunities. Explore 
+            our website to<br/> discover how our products and services can revolutionize your 
+            business.
+        </p>
+        </div>
+      </div>
+    </div>
+        {/* Divider */}
+        <div class="flex items-center md:mt-40 mt-20 border-gr"> 
+        <hr class="flex-grow border-t border-gray"/> 
+    </div>
+
+    {/* Courses Offered */}
+    <div class="flex items-center justify-center">
+      <h1 className="md:text-3xl text-2xl font-medium leading-tight mt-20">
+        <span className='text-orange font-bold'>Courses Offered</span>
+      </h1>
+    </div>
+    <div className='flex mt-10 items-center justify-center '>
+        <p  className="md:text-xl font-medium text-gr leading-relaxed md:text-center md:px-20 px-10 mb-10" style={{ lineHeight: '1.8' }}>
+        At Neural Transformers.ai, we provide extensive and real-time training programs designed 
+        to equip individuals with the skills and knowledge needed to excel in today's competitive
+        job market. Our programs cover a wide range of domains, including Data Science, Data Analysis,
+        Full Stack .NET Development, Python, SQL, AZ104, AZ400, and more.
+        </p>
+    </div>
+    {/* Course Card Section */}
+    <div className="App grid grid-rows-2 
+    items-center content-center md:grid-cols-3 
+    lg:grid-cols-3 md:px-12 lg:px-24 p-4 gap-28 justify-center">
+        <Card/>
+        {/* <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/> */}
+    </div>
+</div>
+
+
   )
 }
 
