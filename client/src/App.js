@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import SpecificCourse from "./components/SpecificCourse.jsx";
+import CreateCourse from "./components/CreateCourse.jsx";
 
 import {BrowserRouter as Router,Routes,Route,Navigate, Outlet} from 'react-router-dom'
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
       <Route path='/about'  element={<AboutPage />} />
         <Route path='/courses'  element={<CoursesPage />} />
+        <Route path='/create'  element={<CreateCourse />} />
         <Route path='/course/:id' element={<SpecificCourse />} />
         <Route path='/login'  element={<Login />} />
         <Route path='/'  element={<Home />} />
